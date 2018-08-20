@@ -1,15 +1,20 @@
 package deezerAdapter;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.google.gson.annotations.SerializedName;
 
 import deezerAdapter.visitor.Visitor;
 
-public class Album implements JsonNode {
+public class Album implements SingleChildNode {
 	private long id;
 	private String title;
-	private String coverUrl;
 	private TrackContainer tracks;
+	
+	@SerializedName("tracklist")
+	private String tracklistUrl;
+	
+	@SerializedName("cover")
+	private String coverUrl;
+	
 	
 	public String getTitle() {
 		return title;
@@ -23,6 +28,18 @@ public class Album implements JsonNode {
 	public void setId(long id) {
 		this.id = id;
 	}
+	public TrackContainer getTracks() {
+		return tracks;
+	}
+	public void setTracks(TrackContainer tracks) {
+		this.tracks = tracks;
+	}
+	public String getTracklistUrl() {
+		return tracklistUrl;
+	}
+	public void setTracklistUrl(String tracklistUrl) {
+		this.tracklistUrl = tracklistUrl;
+	}
 	public String getCoverUrl() {
 		return coverUrl;
 	}
@@ -31,16 +48,11 @@ public class Album implements JsonNode {
 	}
 	
 	@Override
-	public List<JsonTreeItem> getChildren() {
-		System.out.println("album title : " + title);
-		System.out.println("album tracks : " + tracks);
-		List<JsonTreeItem> children = new ArrayList<JsonTreeItem>();
-		children.add(tracks);
-		return children;
-	}
-	
-	@Override
 	public void visit(Visitor visitor) {
 		visitor.visitAlbum(this);
+	}
+	@Override
+	public JsonTreeItem getOnlyChild() {
+		return tracks;
 	}
 }

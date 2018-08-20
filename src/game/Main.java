@@ -62,7 +62,7 @@ public class Main {
 		while(!done) {
 			correctGuess = checkTrue(guess, track); // check guess correctness
 			if(guess.equals("q!")) { // if user ask to leave
-				return false;
+				return true;
 			}
 			else if(guess.equals("n!")) {
 				done = true;
@@ -82,7 +82,7 @@ public class Main {
 		println("song's information");
 		track.describe();
 		
-		return true;
+		return false;
 	}
 
 

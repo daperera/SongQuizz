@@ -14,21 +14,14 @@ public class SongQuizz {
 	SoundJLayer soundToPlay;
 
 	public SongQuizz() {
-		// create url for deezer playlist query
-		String url = "https://api.deezer.com/user/1357015064/albums";
-
-		// create Json hierarchy from the response of this query
-		JsonTreeBuilder builder = new JsonTreeBuilder(url);
-		JsonTreeItem tree = builder.build();
+		
+		// create Json hierarchy from the query to deezer api
+		JsonTreeItem tree = new JsonTreeBuilder().build();
 
 		// create a visitor that will collect tracks on this tree
 		TrackCollector collector = new TrackCollector();
 		tracks = collector.collect(tree);
 		
-		// test
-		System.out.println("describing tracks");
-		for(Track t : tracks) t.describe();
-		System.out.println("end of description");
 	}
 	
 	public Track playNext() {
