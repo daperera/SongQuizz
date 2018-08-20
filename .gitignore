@@ -1,0 +1,10 @@
+
+#program artifacts
+*.class
+data/*
+*.jar
+
+#eclipse artifacts
+/org.eclipse.jdt.core.prefs
+
+#maven artifacts
