@@ -8,3 +8,4 @@ data/*
 /org.eclipse.jdt.core.prefs
 
 #maven artifacts
+/bin/
