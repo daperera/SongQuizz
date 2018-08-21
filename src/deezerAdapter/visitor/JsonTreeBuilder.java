@@ -9,17 +9,17 @@ import deezerAdapter.AlbumContainer;
 import deezerAdapter.JsonGetter;
 import deezerAdapter.JsonTreeItem;
 import deezerAdapter.JsonTreeRoot;
+import deezerAdapter.Track;
 import deezerAdapter.TrackContainer;
 
 public class JsonTreeBuilder implements Visitor {
-
+	
+	private Album currentAlbum;
 
 	// syntaxic sugar
 	public JsonTreeItem build() {
 		JsonTreeItem root = new JsonTreeRoot();
 		root.visit(this);
-		TracksAlbumSetter setter = new TracksAlbumSetter();
-		setter.set(root);
 		return root;
 	}
 	
@@ -39,6 +39,9 @@ public class JsonTreeBuilder implements Visitor {
 	
 	@Override
 	public void visitAlbum(Album album) {
+		// record current album (to fill the proper child field)
+		currentAlbum = album;
+		
 		// construct children
 		try {
 			String response = JsonGetter.get(album.getTracklistUrl());
@@ -47,20 +50,14 @@ public class JsonTreeBuilder implements Visitor {
 		} catch (IOException e) { 
 			e.printStackTrace();
 		}
+		
+		// visit children
 		visitChildren(album);
 	}
 	
-	/*
 	@Override
-	public void visitPlaylist(Playlist playlist) {
-		try {
-			String response = JsonGetter.get(playlist.getTracklist());
-			TrackContainer tracks = new Gson().fromJson(response, TrackContainer.class);
-			playlist.setTracks(tracks);
-		} catch (IOException e) { 
-			e.printStackTrace();
-		}
-		visitChildren(playlist);
+	public void visitTrack(Track track) {
+		track.setAlbum(currentAlbum);
 	}
-	*/
+	
 }
