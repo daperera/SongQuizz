@@ -1,10 +1,9 @@
-package deezerAdapter;
+package com.telecom.deezerAdapter;
 import java.io.IOException;
 
 import com.google.gson.annotations.SerializedName;
-
-import deezerAdapter.visitor.Visitor;
-import misc.Utils;
+import com.telecom.deezerAdapter.visitor.Visitor;
+import com.telecom.misc.Utils;
 
 public class Track implements JsonLeaf {
 

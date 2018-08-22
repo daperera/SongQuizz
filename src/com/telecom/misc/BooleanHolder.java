@@ -1,4 +1,4 @@
-package misc;
+package com.telecom.misc;
 
 public class BooleanHolder {
 	boolean bool;

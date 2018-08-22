@@ -5,6 +5,13 @@ data/*
 *.jar
 
 #eclipse artifacts
-/org.eclipse.jdt.core.prefs
+org.eclipse.jdt.core.prefs
+org.eclipse.m2e.core.prefs
+*.eclipse.jdt.core.prefs
+
 
 #maven artifacts
+
+/bin/
+
+/target/

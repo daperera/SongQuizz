@@ -1,16 +1,15 @@
-package deezerAdapter.visitor;
+package com.telecom.deezerAdapter.visitor;
 
 import java.io.IOException;
 
 import com.google.gson.Gson;
-
-import deezerAdapter.Album;
-import deezerAdapter.AlbumContainer;
-import deezerAdapter.JsonGetter;
-import deezerAdapter.JsonTreeItem;
-import deezerAdapter.JsonTreeRoot;
-import deezerAdapter.Track;
-import deezerAdapter.TrackContainer;
+import com.telecom.deezerAdapter.Album;
+import com.telecom.deezerAdapter.AlbumContainer;
+import com.telecom.deezerAdapter.JsonGetter;
+import com.telecom.deezerAdapter.JsonTreeItem;
+import com.telecom.deezerAdapter.JsonTreeRoot;
+import com.telecom.deezerAdapter.Track;
+import com.telecom.deezerAdapter.TrackContainer;
 
 public class JsonTreeBuilder implements Visitor {
 	

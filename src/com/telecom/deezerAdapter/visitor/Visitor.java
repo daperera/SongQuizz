@@ -1,31 +1,21 @@
-package deezerAdapter.visitor;
+package com.telecom.deezerAdapter.visitor;
 
 import java.util.List;
 
-import deezerAdapter.Album;
-import deezerAdapter.AlbumContainer;
-import deezerAdapter.Artist;
-import deezerAdapter.JsonNode;
-import deezerAdapter.JsonTreeItem;
-import deezerAdapter.JsonTreeRoot;
-import deezerAdapter.Playlist;
-import deezerAdapter.PlaylistContainer;
-import deezerAdapter.Track;
-import deezerAdapter.TrackContainer;
+import com.telecom.deezerAdapter.Album;
+import com.telecom.deezerAdapter.AlbumContainer;
+import com.telecom.deezerAdapter.Artist;
+import com.telecom.deezerAdapter.JsonNode;
+import com.telecom.deezerAdapter.JsonTreeItem;
+import com.telecom.deezerAdapter.JsonTreeRoot;
+import com.telecom.deezerAdapter.Track;
+import com.telecom.deezerAdapter.TrackContainer;
 
 public interface Visitor {
 	public default void visitQueryRoot(JsonTreeRoot root) {
 		visitChildren(root);
 	}
 
-	public default void visitPlaylistContainer(PlaylistContainer playlistContainer) {
-		visitChildren(playlistContainer);
-	}
-	
-	public default void visitPlaylist(Playlist playlist) {
-		visitChildren(playlist);
-	}
-	
 	public default void visitAlbumContainer(AlbumContainer albumContainer) {
 		visitChildren(albumContainer);
 	}

@@ -1,0 +1,12 @@
+.base {
+	-fx-border-color: blue;
+}
+
+.incorrect {
+	-fx-border-color: red;
+}
+
+.correct {
+	-fx-border-color: green;
+}
+

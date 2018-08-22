@@ -1,6 +1,6 @@
-package deezerAdapter;
+package com.telecom.deezerAdapter;
 
-import deezerAdapter.visitor.Visitor;
+import com.telecom.deezerAdapter.visitor.Visitor;
 
 public class Artist implements JsonLeaf {
 	private long id;

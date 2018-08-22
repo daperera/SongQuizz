@@ -1,4 +1,4 @@
-package deezerAdapter;
+package com.telecom.deezerAdapter;
 import java.util.List;
 
 public interface JsonNode extends JsonTreeItem {

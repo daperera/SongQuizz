@@ -1,8 +1,7 @@
-package deezerAdapter;
+package com.telecom.deezerAdapter;
 
 import com.google.gson.annotations.SerializedName;
-
-import deezerAdapter.visitor.Visitor;
+import com.telecom.deezerAdapter.visitor.Visitor;
 
 public class Album implements SingleChildNode {
 	private long id;

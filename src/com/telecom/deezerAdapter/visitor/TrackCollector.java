@@ -1,10 +1,10 @@
-package deezerAdapter.visitor;
+package com.telecom.deezerAdapter.visitor;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import deezerAdapter.JsonTreeItem;
-import deezerAdapter.Track;
+import com.telecom.deezerAdapter.JsonTreeItem;
+import com.telecom.deezerAdapter.Track;
 
 public class TrackCollector implements Visitor {
 	

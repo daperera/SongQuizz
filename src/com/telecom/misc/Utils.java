@@ -1,4 +1,4 @@
-package misc;
+package com.telecom.misc;
 
 public class Utils {
 	public static String getFileNameExtention(String filename) {

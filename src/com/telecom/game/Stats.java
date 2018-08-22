@@ -1,5 +1,5 @@
-package game;
-import deezerAdapter.Track;
+package com.telecom.game;
+import com.telecom.deezerAdapter.Track;
 
 public class Stats {
 

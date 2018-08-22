@@ -1,9 +1,10 @@
-package deezerAdapter;
+package com.telecom.deezerAdapter;
 import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
-import misc.BooleanHolder;
+import com.telecom.misc.BooleanHolder;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.OkHttpClient;

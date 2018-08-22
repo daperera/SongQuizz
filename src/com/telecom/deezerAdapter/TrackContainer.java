@@ -1,8 +1,8 @@
-package deezerAdapter;
+package com.telecom.deezerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import deezerAdapter.visitor.Visitor;
+import com.telecom.deezerAdapter.visitor.Visitor;
 
 public class TrackContainer implements JsonNode {
 	private List<Track> data;

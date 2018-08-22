@@ -1,4 +1,4 @@
-package deezerAdapter;
+package com.telecom.deezerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package game;
+package com.telecom.game;
 
 public class User {
 
