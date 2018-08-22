@@ -7,6 +7,7 @@
 <?import javafx.scene.text.*?>
 
 <GridPane xmlns:fx="http://javafx.com/fxml" stylesheets="@window.css"
+	onKeyPressed="#handleOnKeyPressed"
 	alignment="center" hgap="10" vgap="10" styleClass="root">
 	<padding>
 		<Insets top="25" right="25" bottom="10" left="25" />

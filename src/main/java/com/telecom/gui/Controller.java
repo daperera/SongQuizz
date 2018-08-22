@@ -1,11 +1,11 @@
 package com.telecom.gui;
 
-import com.telecom.game.ControllerListener;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 
 public class Controller {
 
@@ -15,27 +15,24 @@ public class Controller {
 	@FXML public Button checkButton;
 
 	private ControllerListener listener;
-	private boolean check;
 
 	private final static String correctGuessStyle = "-fx-border-color: green;";
 	private final static String incorrectGuessStyle = "-fx-border-color: red;";
 	
 	public Controller(ControllerListener controllerListener) {
 		this.listener = controllerListener;
-		check = true;
 	}
 
 	@FXML protected void check(ActionEvent event) {
-		if(check) {
-			listener.checkEvent();
-			checkButton.setText("Next");
-			check = false;
-		}
-		else {
-			listener.nextEvent();
-			checkButton.setText("Check");
-			check = true;
-		}
+		listener.userEvent();
+	}
+	
+	@FXML
+	private void handleOnKeyPressed(KeyEvent event)
+	{
+	    if(event.getCode().equals(KeyCode.ENTER)) {
+	    	listener.userEvent();
+	    }
 	}
 
 	public void guessCorrection(TextField field, String answer, boolean correctGuess) {
@@ -57,5 +54,14 @@ public class Controller {
 		}
 		title.requestFocus();
 	}
+	
+	public void setCheckMode() {
+		checkButton.setText("Check");
+	}
+	
+	public void setNextMode() {
+		checkButton.setText("Next");
+	}
+	
 }
 

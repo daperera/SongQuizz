@@ -34,6 +34,12 @@
 			<artifactId>commons-text</artifactId>
 			<version>1.4</version>
 		</dependency>
-
+		<dependency>
+			<groupId>com.deezer</groupId>
+			<artifactId>deezer-sdk</artifactId>
+			<version>0.9.8</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/resources/deezer-ios-sdk.zip</systemPath>
+		</dependency>
 	</dependencies>
 </project>

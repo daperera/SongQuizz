@@ -2,8 +2,6 @@ package com.telecom.gui;
 
 import java.io.IOException;
 
-import com.telecom.game.ControllerListener;
-
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
