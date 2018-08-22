@@ -10,11 +10,14 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Window {
+	
+	private Controller controller;
+	
 	public Window(Stage stage, ControllerListener controllerListener) {
 		FXMLLoader loader = new FXMLLoader(Main.class.getResource("window.fxml"));
 		
-		Controller playListViewController = new Controller(controllerListener);
-		loader.setController(playListViewController);
+		controller = new Controller(controllerListener);
+		loader.setController(controller);
 		
 		Parent root;
 		try {
@@ -27,5 +30,9 @@ public class Window {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+
+	public Controller getController() {
+		return controller;
 	}
 }
